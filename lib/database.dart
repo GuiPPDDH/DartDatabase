@@ -1,5 +1,4 @@
 import 'package:mysql1/mysql1.dart';
-
 class Database {
   Future<MySqlConnection> openConnection() {
     final connectionSettings = ConnectionSettings(

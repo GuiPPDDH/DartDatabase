@@ -7,7 +7,7 @@ Future<void> main() async {
   print(mysqlConnection.toString());
 
   await mysqlConnection.query('insert into aluno(id, nome) values(?, ?)',
-      [null, 'Guilherme Potter Petry']);
+      [null, 'Guilherme']);
 
   var resultadoSelect = await mysqlConnection.query('select * from aluno');
   resultadoSelect.forEach((row) {
@@ -36,7 +36,7 @@ Future<void> main() async {
 
   try {
     await mysqlConnection.query('update aluno set nome = ? where id = ?',
-        ['Guilherme Potter Petry', 1]);
+        ['Guilherme Potter Petry atualizado', 1]);
   } on MySqlException catch (e) {
     print(e);
     print('Erro ao atualizar dados do aluno');
